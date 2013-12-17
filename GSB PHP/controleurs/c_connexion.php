@@ -29,6 +29,7 @@ switch($action){
 
 		}
 		if ($_SESSION['comptable']==true) {
+			$lesVisiteurs = $pdo->getInfosV();
 			include("vues/v_accueilComptable.php");
 		}
 			
