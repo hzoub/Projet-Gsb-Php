@@ -355,3 +355,8 @@ table.listeLegere th.libelle{
   text-decoration:none;
   text-align:center;
 }
+
+#contenu .listeVisiteur{
+		margin-right: auto;
+		margin-left: auto;
+}

@@ -7,18 +7,15 @@
 	   <div class="corpsForm">
 	<center>
 		Visiteur : 
-			<select id="lstVisiteur" name="idVisiteur" title="Sélectionnez l'id du visiteur souhaité">
+			<select id="lstVisiteur" name="idVis" title="Sélectionnez l'id du visiteur souhaité">
 					  <?php 
 						foreach($visiteurFiche as $recup)  {
 						$id = $recup["id"];
 						$nom = $recup["nom"];
 						$prenom = $recup["prenom"];
-						$selected="";
-						/*if($id==$idVisiteur) 
-							$selected='selected="selected"';*/
 						?>
 
-				<option name="idVis" <?php echo $selected ?> value="<?php echo $nom." ".$prenom;?>"><?php echo $nom." ".$prenom;?></option>
+				<option name="idVis" value="<?php echo $id; ?>"><?php echo $nom." ".$prenom; ?></option>
 
 				<?php
 				}

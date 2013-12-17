@@ -21,8 +21,7 @@
     </tr>
         <tr>
         <?php
-          foreach (  $lesFraisForfait as $unFraisForfait  ) 
-      {
+          foreach (  $lesFraisForfait as $unFraisForfait){
         $quantite = $unFraisForfait['quantite'];
     ?>
                 <td class="qteForfait"><input type="" value="<?php echo $quantite?>" size="14"> </td>
@@ -41,16 +40,19 @@
                 <th class='montant'>Supprimer</th>                
              </tr>
         <?php      
-
+        foreach ($lesFraisHorsForfait as $unFraisHorsForfait){
+        	$date = $unFraisHorsForfait['date'];
+        	$libelle = $unFraisHorsForfait['libelle'];
+        	$montant = $unFraisHorsForfait['montant'];
 		?>
              <tr>
-                <td><input type="" value="<?php echo "date" ?>"  size="14"></td>
-                <td><input type="" value="<?php echo "libelle" ?>"  size="14"></td>
-                <td><input type="" value="<?php echo "montant" ?>"  size="14"></td>
+                <td><input type="" value="<?php echo $date ?>"  size="14"></td>
+                <td><input type="" value="<?php echo $libelle ?>"  size="14"></td>
+                <td><input type="" value="<?php echo $montant ?>"  size="14"></td>
                 <td><input type="submit" value="Suprimer"></td>
              </tr>
         <?php 
-          
+          }
 		?>
     </table>
 	<center><input id="" type="reset" value="Valider" size="20" /></center>

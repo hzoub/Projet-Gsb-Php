@@ -1,6 +1,7 @@
 <div id="contenu">
-	<center><h2>Bienvenue dans l'espace Comptable</h2></center>
-			<table border="1">
+	<center>
+		<h2>Bienvenue dans l'espace Comptable</h2>
+			<table border="1" class="listeVisiteur">
 				 <tr align="center">
 					 <td colspan="4"><b>Listes des visiteurs</b></td>
 				 </tr>
@@ -18,4 +19,4 @@
 					 <td><?php echo $recuPvisiteur['prenom']; ?></td>
 				 </tr>	
 				<?php } ?>
-		     </table>
+	</table>
