@@ -281,7 +281,7 @@ table.listeLegere th.libelle{
 	border : 1px solid #6988BE;
 	padding-left: 25px;
 	background-color: #E9F1FE;
-  height : 28px;
+    height : 28px;
 }
 
 #contenu img {
@@ -355,4 +355,3 @@ table.listeLegere th.libelle{
   text-decoration:none;
   text-align:center;
 }
-

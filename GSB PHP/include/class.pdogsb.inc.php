@@ -68,9 +68,9 @@ class PdoGsb{
    *By zoubert hanem
 */
 	public function getInfosV(){
-		$req = "select id,nom,prenom
-				from visiteur
-	            where comptable=false";
+		$req = "SELECT id,nom,prenom
+				FROM visiteur
+				WHERE comptable=0";
 				$rs = PdoGsb::$monPdo->query($req);
 				$ligne = $rs->fetchAll();
 		return $ligne;
