@@ -23,6 +23,7 @@
         <?php
           foreach (  $lesFraisForfait as $unFraisForfait){
         $quantite = $unFraisForfait['quantite'];
+       
     ?>
                 <td class="qteForfait"><input type="" value="<?php echo $quantite?>" size="14"> </td>
      <?php
@@ -30,8 +31,9 @@
     ?>
     </tr>
     </table>
+
   	<table class="listeLegere">
-  	   <caption>Descriptif des éléments hors forfait -<?php echo "nbJustificatifs" ?> justificatifs reçus -
+  	   <caption>Descriptif des éléments hors forfait -<?php echo $nbJustificatifs ?>- justificatifs reçus -
        </caption>
              <tr>
                 <th class="date">Date</th>
@@ -44,6 +46,7 @@
         	$date = $unFraisHorsForfait['date'];
         	$libelle = $unFraisHorsForfait['libelle'];
         	$montant = $unFraisHorsForfait['montant'];
+
 		?>
              <tr>
                 <td><input type="" value="<?php echo $date ?>"  size="14"></td>
@@ -55,6 +58,6 @@
           }
 		?>
     </table>
-	<center><input id="" type="reset" value="Valider" size="20" /></center>
+	<center><input id="" type="reset" value="Valider cette fiche" size="20" /></center>
   </div>
       

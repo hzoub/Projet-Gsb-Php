@@ -52,11 +52,13 @@ switch($action){
 		case 'voirFicheFraisVisiteur':{
 		$lesMois=$pdo->getLesMoisDisponibles($idVisiteur);
 		$leMois = $_REQUEST['lstMois']; 
-		$idVis = $_POST['idVis'];
+		$idVis = $_REQUEST['idVis'];
 		
 		$lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVis,$leMois);
 		$lesFraisForfait= $pdo->getLesFraisForfait($idVis,$leMois);
 		$lesInfosFicheFrais = $pdo->getLesInfosFicheFrais($idVis,$leMois);
+	
+		
 		$numAnnee =substr( $leMois,0,4);
 		$numMois =substr( $leMois,4,2);
 		$libEtat = $lesInfosFicheFrais['libEtat'];
