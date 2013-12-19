@@ -3,7 +3,7 @@
 		<h2>Bienvenue dans l'espace Comptable</h2>
 			<table border="1" class="listeVisiteur">
 				 <tr align="center">
-					 <td colspan="4"><b>Listes des visiteurs</b></td>
+					 <th colspan="3"><b>Listes des visiteurs</b></th>
 				 </tr>
 				 <tr align="center">
 				 	 <td>Id</td>
