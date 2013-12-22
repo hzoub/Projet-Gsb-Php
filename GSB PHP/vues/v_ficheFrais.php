@@ -25,7 +25,7 @@
         $quantite = $unFraisForfait['quantite'];
        
     ?>
-                <td class="qteForfait"><input type="" value="<?php echo $quantite?>" size="14"> </td>
+                <td class="qteForfait"><input type="" value="<?php echo $quantite ?>" size="14"> </td>
      <?php
           }
     ?>
