@@ -10,11 +10,14 @@
 			  Comptable :<br>
 				<?php echo $_SESSION['prenom']."  ".$_SESSION['nom']; ?>
 		   </li>
+		    <li class="smenu">
+              <a href="index.php?uc=etatFrais&action=listeVisiteur" title=""><hr/>Liste des Visiteurs</a>
+      	   </li>
 		   <li class="smenu">
-              <a href="index.php?uc=etatFrais&action=ValiderFiche" title="Valider fiche de frais"><hr/>Valider les fiches de frais</a>
-      </li>
+              <a href="index.php?uc=etatFrais&action=ChoixVisiteur" title="Valider fiche de frais"><hr/>Valider les fiches de frais</a>
+      	   </li>
            <li class="smenu">
-              <a href="index.php?uc=etatFrais&action=voirSuiviePaiement" title="Suivie paiement fiche de frais"><hr/>Suivie paiement</a>
+              <a href="index.php?uc=etatFrais&action=voirSuiviePaiement" title="Suivre le paiement des fiches de frais"><hr/>Suivre le paiement des fiches de frais</a>
            </li>
 
 		   <li class="smenu">

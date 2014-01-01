@@ -41,16 +41,16 @@ switch($action){
 		break;
 	}
 	/*By zoubert hanem*/
-		case 'ValiderFiche':{
+		case 'ChoixVisiteur':{
 		$lesMois=$pdo->getLesMoisDisponibles($idVisiteur);
 		$visiteurFiche= $pdo->getVisiteurFiche($moisFicheActuel);
-		include("vues/v_validerFiche.php");
+		include("vues/v_choixVisiteur.php");
 		break;
 	}
 	
 	/*By zoubert hanem*/
-		case 'voirFicheFraisVisiteur':{
-		$lesMois=$pdo->getLesMoisDisponibles($idVisiteur);
+		case 'voirFicheFraisVisiteur':{	
+		
 		$leMois = $_REQUEST['lstMois']; 
 		$idVis = $_REQUEST['idVis'];
 		
@@ -84,6 +84,11 @@ switch($action){
 		break;
 	}
 	
-
+	/*Hérvé*/
+	case 'listeVisiteur':{
+		$lesVisiteurs = $pdo->getInfosV();
+		include("vues/v_accueilComptable.php");
+		break;
+	}
 }
 ?>
