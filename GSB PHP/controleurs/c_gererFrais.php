@@ -44,6 +44,12 @@ switch($action){
 		break;
 	}
 
+	case 'mettrePaiementFiche':{
+
+		//include("vues/v_suiviPaiement.php");
+		break;
+	}
+
 
 }
 $lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVisiteur,$mois);

@@ -40,11 +40,29 @@ switch($action){
 		include("vues/v_affVisiteurs.php");
 		break;
 	}
+
+
 	/*By zoubert hanem*/
 		case 'ChoixVisiteur':{
 		$lesMois=$pdo->getLesMoisDisponibles($idVisiteur);
-		$visiteurFiche= $pdo->getVisiteurFiche($moisFicheActuel);
-		include("vues/v_choixVisiteur.php");
+		$visiteurFiche= $pdo->getVisiteurFicheCR($moisFicheActuel);
+
+		//echo "<center>Mois en cours -> " .$moisFicheActuel."</center></br>";
+		//Si la fonction getVisiteurFicheCR renvoie null c'est qu'il n y a aucune fiche ce mois çi
+		if($visiteurFiche==null){
+
+			echo "<div class=\"infosFiche message\">
+				  	<p>Il n'y a aucune fiche a valider ce mois çi</p>
+				  </div>";
+
+		}
+
+		else{
+
+		   include("vues/v_choixVisiteur.php");
+
+		}
+
 		break;
 	}
 	
@@ -72,15 +90,33 @@ switch($action){
 	}
 
 	/*By zoubert hanem*/
-		case 'voirSuiviePaiement':{
-		$lesMois=$pdo->getLesMoisDisponibles($idVisiteur);
-		$visiteurFiche= $pdo->getVisiteurFiche($moisFicheActuel);
-		// Afin de sélectionner par défaut le dernier mois dans la zone de liste
-		// on demande toutes les clés, et on prend la première,
-		// les mois étant triés décroissants
-		$lesCles = array_keys( $lesMois );
-		$moisASelectionner = $lesCles[0];
-		include("vues/v_suiviePaiement.php");
+		case 'ChoixSuivi':{
+		//Récupere le visiteur 
+		$visiteurFiche = $pdo->getVisiteurFicheVa();
+		//Récupere le mois de la fiche
+		$moisFiche = $pdo->getVisiteurFicheVa();
+		include("vues/v_choixSuivieVisiteur.php");
+		break;
+	}
+
+	/*By zoubert hanem*/
+		case 'voirSuiviPaiement':{
+		$leMois = $_REQUEST['lstMois']; 
+		$idVis = $_REQUEST['idVis'];
+		
+		$lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVis,$leMois);
+		$lesFraisForfait= $pdo->getLesFraisForfait($idVis,$leMois);
+		$lesInfosFicheFrais = $pdo->getLesInfosFicheFrais($idVis,$leMois);
+		
+		$numAnnee =substr( $leMois,0,4);
+		$numMois =substr( $leMois,4,2);
+		$libEtat = $lesInfosFicheFrais['libEtat'];
+		$montantValide = $lesInfosFicheFrais['montantValide'];
+		$nbJustificatifs = $lesInfosFicheFrais['nbJustificatifs'];
+		$dateModif =  $lesInfosFicheFrais['dateModif'];
+		$dateModif =  dateAnglaisVersFrancais($dateModif);
+		 $ficheFraiVisiteur=$pdo->getLesFraisHorsForfait($idVis,$leMois);
+		include("vues/v_suiviPaiement.php");
 		break;
 	}
 	

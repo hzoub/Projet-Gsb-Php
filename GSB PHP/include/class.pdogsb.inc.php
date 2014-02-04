@@ -85,18 +85,12 @@ class PdoGsb{
 		return $ligne;
 	}
 /**
- * Retourne les informations des fiches de frais
+ * Retourne les informations des fiches de frais "CR" c'est à dire Fiche créée, saisie en cours.
    * @return le nom le mois, le montant validé et le libelle de l'etat sous la forme d'un tableau associatif 
-   *By zoubert hanem
 */
 
-	public function getVisiteurFiche($moisActuel){
-	/* 	$req = "SELECT nom,mois,montantValide,libelle
-				FROM fichefrais,visiteur,etat
-				WHERE fichefrais.idVisiteur = visiteur.id
-				AND fichefrais.idEtat = etat.id
-				AND comptable=false"; */
-				
+	public function getVisiteurFicheCR($moisActuel){
+
 		$req = "SELECT id, nom, prenom, mois
 				From visiteur, fichefrais
 				Where visiteur.id = fichefrais.idVisiteur and 
@@ -107,7 +101,25 @@ class PdoGsb{
 		return $ligne;
 	}
 
+/**
+ * Retourne les informations des fiches de frais validé par le comptable
+   * @return l'id le nom,prenom,le mois sous la forme d'un tableau associatif 
+   *By zoubert hanem
+*/
 
+	public function getVisiteurFicheVa(){
+
+		$req = "SELECT distinct id, nom, prenom,mois 
+				FROM visiteur,fichefrais 
+				WHERE visiteur.id = fichefrais.idVisiteur 
+				AND comptable=0 
+				AND idEtat='VA' 
+				ORDER BY id";
+
+		$rs  = PdoGsb::$monPdo->query($req);
+		$ligne = $rs->fetchAll();
+		return $ligne;
+	}
 /**
  * Retourne sous forme d'un tableau associatif toutes les lignes de frais hors forfait
  * concernées par les deux arguments

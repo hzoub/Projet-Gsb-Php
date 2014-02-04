@@ -17,7 +17,7 @@
               <a href="index.php?uc=etatFrais&action=ChoixVisiteur" title="Valider fiche de frais"><hr/>Valider les fiches de frais</a>
       	   </li>
            <li class="smenu">
-              <a href="index.php?uc=etatFrais&action=voirSuiviePaiement" title="Suivre le paiement des fiches de frais"><hr/>Suivre le paiement des fiches de frais</a>
+              <a href="index.php?uc=etatFrais&action=ChoixSuivi" title="Suivre le paiement des fiches de frais"><hr/>Suivre le paiement des fiches de frais</a>
            </li>
 
 		   <li class="smenu">
