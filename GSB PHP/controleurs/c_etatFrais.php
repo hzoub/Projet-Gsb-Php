@@ -48,12 +48,14 @@ switch($action){
 		$visiteurFiche= $pdo->getVisiteurFicheCR($moisFicheActuel);
 
 		//echo "<center>Mois en cours -> " .$moisFicheActuel."</center></br>";
-		//Si la fonction getVisiteurFicheCR renvoie null c'est qu'il n y a aucune fiche ce mois çi
+		//Si la fonction getVisiteurFicheCR renvoie null affiche un msg et renvoie à la page d'accueil.
 		if($visiteurFiche==null){
 
 			echo "<div class=\"infosFiche message\">
 				  	<p>Il n'y a aucune fiche a valider ce mois çi</p>
-				  </div>";
+				  </div> 
+				  <meta http-equiv=\"refresh\" content=\"3; URL=index.php?uc=etatFrais&action=listeVisiteur\">
+				 ";
 
 		}
 
