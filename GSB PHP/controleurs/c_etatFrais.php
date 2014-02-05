@@ -44,8 +44,10 @@ switch($action){
 
 	/*By zoubert hanem*/
 		case 'ChoixVisiteur':{
-		$lesMois=$pdo->getLesMoisDisponibles($idVisiteur);
-		$visiteurFiche= $pdo->getVisiteurFicheCR($moisFicheActuel);
+			
+		$lesMois = $pdo->getLesMoisDisponibles($idVisiteur);
+
+		$visiteurFiche = $pdo->getVisiteurFicheCR($moisFicheActuel);
 
 		//echo "<center>Mois en cours -> " .$moisFicheActuel."</center></br>";
 		//Si la fonction getVisiteurFicheCR renvoie null affiche un msg et renvoie à la page d'accueil.
