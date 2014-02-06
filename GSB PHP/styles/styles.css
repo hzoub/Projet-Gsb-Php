@@ -79,6 +79,7 @@ ul#menuList{
   height: 250px;
   border-radius: 5px;
   border:1px solid transparent;
+
   background: rgba(226,226,226,1);
   background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(186,184,186,1) 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(226,226,226,1)), color-stop(50%, rgba(219,219,219,1)), color-stop(51%, rgba(209,209,209,1)), color-stop(100%, rgba(186,184,186,1)));
@@ -86,8 +87,12 @@ ul#menuList{
   background: -o-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(186,184,186,1) 100%);
   background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(186,184,186,1) 100%);
   background: linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(186,184,186,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#bab8ba', GradientType=0 );
+  
+     -webkit-box-shadow:0 1px 4px #000, 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px #000, 0 0 40px rgba(0, 0, 0, 0.1) inset;
+            box-shadow:0 1px 4px #000, 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
+
 
 /* style à appliquer aux éléments de la balise ul d'identifiant menulist */
 ul#menuList li {
@@ -103,20 +108,21 @@ ul#menuList a {
 
   margin-left: -16px;
   color:black;
+  font-weight: bold;
   display:block;
   text-decoration:none;
   width: 150px;
   border-radius: 5px;
   border: 1px solid #79bbff;
+
   background: rgba(179,220,237,1);
-background: -moz-linear-gradient(top, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(121,187,255,1) 100%);
-background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(179,220,237,1)), color-stop(50%, rgba(41,184,229,1)), color-stop(100%, rgba(121,187,255,1)));
-background: -webkit-linear-gradient(top, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(121,187,255,1) 100%);
-background: -o-linear-gradient(top, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(121,187,255,1) 100%);
-background: -ms-linear-gradient(top, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(121,187,255,1) 100%);
-background: linear-gradient(to bottom, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(121,187,255,1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3dced', endColorstr='#79bbff', GradientType=0 );
-  font-weight: bold;
+  background: -moz-linear-gradient(top, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(121,187,255,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(179,220,237,1)), color-stop(50%, rgba(41,184,229,1)), color-stop(100%, rgba(121,187,255,1)));
+  background: -webkit-linear-gradient(top, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(121,187,255,1) 100%);
+  background: -o-linear-gradient(top, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(121,187,255,1) 100%);
+  background: -ms-linear-gradient(top, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(121,187,255,1) 100%);
+  background: linear-gradient(to bottom, rgba(179,220,237,1) 0%, rgba(41,184,229,1) 50%, rgba(121,187,255,1) 100%);
+ 
 }
 
 ul#menuList a:before,
@@ -495,21 +501,21 @@ table.listeLegere th.libelle{
 
 /*Animation error by Zoub*/
 .animationError {
-  -webkit-animation-duration: 1s;
-     -moz-animation-duration: 1s;
-       -o-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-     -moz-animation-fill-mode: both;
-       -o-animation-fill-mode: both;
-          animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    -o-animation-fill-mode: both;
+    animation-fill-mode: both;
 }
 
 .animationError.hinge {
-  -webkit-animation-duration: 2s;
-     -moz-animation-duration: 2s;
-       -o-animation-duration: 2s;
-          animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    -o-animation-duration: 2s;
+    animation-duration: 2s;
 }
 /* animation rebond*/
 
