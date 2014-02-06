@@ -5,6 +5,7 @@ $idVisiteur = $_SESSION['idVisiteur'];
 $mois = getMois(date("d/m/Y"));
 $moisFicheActuel = date("Ym");
 switch($action){
+	
 	case 'selectionnerMois':{
 		$lesMois=$pdo->getLesMoisDisponibles($idVisiteur);
 		// Afin de sélectionner par défaut le dernier mois dans la zone de liste

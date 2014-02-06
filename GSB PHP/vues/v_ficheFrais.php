@@ -2,7 +2,7 @@
   <center><h2>Fiche de frais du mois <?php echo $numMois."-".$numAnnee ?>: </h2></center>
     <div class="encadre">
     <p>
-        Etat : <?php echo $libEtat ?> et mise en paiement depuis le <?php echo $numMois."-".$numAnnee ?> <br> Montant validé : <?php echo $montantValide." €"?>            
+        Etat : <?php echo $libEtat ?> et mise en paiement depuis le <?php echo $numMois."-".$numAnnee ?> <br> <!--Montant validé : <?php echo $montantValide." €"?>-->            
     </p>
     <table class="listeLegere">
        <caption>Eléments forfaitisés </caption>

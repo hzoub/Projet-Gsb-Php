@@ -57,7 +57,7 @@
             <td><input type="" value="<?php echo $date ?>"  size="14"></td>
             <td><input type="" value="<?php echo $libelle ?>"  size="14"></td>
             <td><input type="" value="<?php echo $montant ?>"  size="14"></td>
-            <td><input type="submit" value="Suprimer"></td>
+            <td><input type="submit" value="Suprimer" name="btnSup"></td>
           </tr>
           <?php 
           }
