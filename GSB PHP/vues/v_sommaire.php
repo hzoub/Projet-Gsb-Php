@@ -36,7 +36,7 @@
 
       </div>  
         <ul id="menuList">
-	        <li class="smenu">
+	        <li class="nomVisiteur">
 				  Visiteur :<br>
 				<?php echo $_SESSION['prenom']."  ".$_SESSION['nom']  ?><hr/>
 			</li>

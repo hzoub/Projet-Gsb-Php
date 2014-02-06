@@ -1,4 +1,14 @@
 /* Styles des divisions principales de la page */
+/*font-familly*/
+@font-face {
+  font-family: 'zoubert';
+  src:url('font/bispo_script_otf.otf');
+  src:url('font/bispo_script_ttf.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 body{
   background-color: #77AADD;
 	background-repeat: repeat-x;
@@ -9,7 +19,7 @@ body{
 
 }
 #page {
-    background-color:white;
+  background-color:white;
   width : 65%;
   margin : auto ;
   border : 0.2em solid black;
@@ -63,6 +73,8 @@ html>body #contenu{
 .nomVisiteur{
   font-weight: bold;
   color: #000;
+  font-family:'zoubert';
+  font-size: 15px;
 }
 
 
@@ -363,8 +375,6 @@ table.listeLegere th.libelle{
 ------------------------------------------*/
 #connexion{
     border-radius:15px;
-
-
     width: 300px;
     position: relative;
     /*box-shadow: 10px 10px 5px;*/
@@ -410,7 +420,8 @@ table.listeLegere th.libelle{
     border:1px solid;
     border-radius: 5px;
     background-color: white;
-    font-size : large;
+    font-size : 20px;
+    font-weight: bold;
     text-align:left;
     margin:0;
     margin-bottom:0.5em;
@@ -425,7 +436,7 @@ table.listeLegere th.libelle{
     -webkit-box-shadow:0 1px 4px #000, 0 0 40px rgba(0, 0, 0, 0.1) inset;
     -moz-box-shadow:0 1px 4px #000, 0 0 40px rgba(0, 0, 0, 0.1) inset;
     box-shadow:0 1px 4px #000, 0 0 40px rgba(0, 0, 0, 0.1) inset;
-
+    font-family: 'zoubert';
 }
 
 
@@ -506,8 +517,8 @@ table.listeLegere th.libelle{
 #contenu  .listeVisiteur  tr{
   text-align: center;
   padding-left:20px;
-  border-radius: 10px;
- 
+  
+  background:#6fcef8;
 }
 
 
