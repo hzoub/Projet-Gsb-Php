@@ -5,6 +5,6 @@ $(document).ready(function(){
 		alert("Mise en paiement de la fiche en cour de mise en place");
 	});
 
-	$(".infosFiche").addClass("animationError bounceIn").delay(3000).fadeOut("slow");
-
+	$(".infosFiche").addClass("animationMsg bounceIn").delay(3000).fadeOut("slow");
+	
 });

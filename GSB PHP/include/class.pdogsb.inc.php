@@ -85,8 +85,8 @@ class PdoGsb{
 		return $ligne;
 	}
 /**
- * Retourne les informations des fiches de frais "CR" c'est à dire Fiche créée, saisie en cours.
-   * @return le nom le mois, le montant validé et le libelle de l'etat sous la forme d'un tableau associatif 
+ * Retourne les informations des fiches de frais "CR" (c'est à dire Fiche créée, saisie en cours).
+   * @return l'id le nom, le prenom et le mois de la fiche frais sous la forme d'un tableau associatif 
 */
 
 	public function getVisiteurFicheCR($moisActuel){

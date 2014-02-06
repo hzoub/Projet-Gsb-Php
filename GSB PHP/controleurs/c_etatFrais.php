@@ -34,7 +34,9 @@ switch($action){
 		break;
 	}
 	
-	/*By zoubert hanem*/
+	/**
+	*@author ...
+	*/
 		case 'infoVisteur':{
 		$visiteur=$pdo->getInfosV();
 		include("vues/v_affVisiteurs.php");
@@ -42,21 +44,35 @@ switch($action){
 	}
 
 
-	/*By zoubert hanem*/
+	/**
+	*@author ....
+	*/
 		case 'ChoixVisiteur':{
-			
-		$lesMois = $pdo->getLesMoisDisponibles($idVisiteur);
+		
+		$lesMois = $pdo->getVisiteurFicheCR($moisFicheActuel);
 
 		$visiteurFiche = $pdo->getVisiteurFicheCR($moisFicheActuel);
 
-		//echo "<center>Mois en cours -> " .$moisFicheActuel."</center></br>";
 		//Si la fonction getVisiteurFicheCR renvoie null affiche un msg et renvoie à la page d'accueil.
 		if($visiteurFiche==null){
 
 			echo "<div class=\"infosFiche message\">
-				  	<p>Il n'y a aucune fiche a valider ce mois çi</p>
-				  </div> 
-				  <meta http-equiv=\"refresh\" content=\"3; URL=index.php?uc=etatFrais&action=listeVisiteur\">
+
+					<div class=\"left\">
+
+						<div class=\"icone\">
+							<img src=\"./images/imgInfos.png\">
+						</div>
+
+					</div>
+
+					<div class=\"right\">
+
+						<p>Il n'y a aucune fiche a valider ce mois çi</p>
+
+					</div>
+				</div>
+					<meta http-equiv=\"refresh\" content=\"3; URL=index.php?uc=etatFrais&action=listeVisiteur\">			  
 				 ";
 
 		}
@@ -70,7 +86,9 @@ switch($action){
 		break;
 	}
 	
-	/*By zoubert hanem*/
+	/**
+	*@author ....
+	*/
 		case 'voirFicheFraisVisiteur':{	
 		
 		$leMois = $_REQUEST['lstMois']; 
@@ -88,12 +106,15 @@ switch($action){
 		$nbJustificatifs = $lesInfosFicheFrais['nbJustificatifs'];
 		$dateModif =  $lesInfosFicheFrais['dateModif'];
 		$dateModif =  dateAnglaisVersFrancais($dateModif);
-		 $ficheFraiVisiteur=$pdo->getLesFraisHorsForfait($idVis,$leMois);
+		$ficheFraiVisiteur=$pdo->getLesFraisHorsForfait($idVis,$leMois);
+
 		 include("vues/v_ficheFrais.php");
 		 break; 
 	}
 
-	/*By zoubert hanem*/
+	/**
+	*@author Zoubert Hanem
+	*/
 		case 'ChoixSuivi':{
 		//Récupere le visiteur 
 		$visiteurFiche = $pdo->getVisiteurFicheVa();
@@ -103,7 +124,9 @@ switch($action){
 		break;
 	}
 
-	/*By zoubert hanem*/
+	/**
+	*@author Zoubert Hanem
+	*/
 		case 'voirSuiviPaiement':{
 		$leMois = $_REQUEST['lstMois']; 
 		$idVis = $_REQUEST['idVis'];
@@ -124,7 +147,9 @@ switch($action){
 		break;
 	}
 	
-	/*Hérvé*/
+	/**
+	*@author ....
+	*/
 	case 'listeVisiteur':{
 		$lesVisiteurs = $pdo->getInfosV();
 		include("vues/v_accueilComptable.php");
