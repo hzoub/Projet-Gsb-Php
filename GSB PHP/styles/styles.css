@@ -1,7 +1,6 @@
 /* Styles des divisions principales de la page */
 body{
   background-color: #77AADD;
-	/*background-image: url(imgs/FONDGLOBAL.jpg);*/
 	background-repeat: repeat-x;
   margin:0% 0%;
   padding : 0.6em;
@@ -10,11 +9,12 @@ body{
 
 }
 #page {
-  background-color:white;
+    background-color:white;
   width : 65%;
   margin : auto ;
   border : 0.2em solid black;
   padding : 0.1em;
+  opacity: 0.9;
 
 }
 #entete{
@@ -24,6 +24,7 @@ body{
 	height: 154px;
 	padding: 0em;
 	border-collapse: separate;
+
 }
 #pied{
   clear : both;
@@ -39,10 +40,11 @@ body{
 #contenu{
 	border: none;
 	padding: 1.3em;
-	background-color: white;
+
 	border-left :  groove 0.8em #980101;
   margin-top : 1.2em;
 	margin-left: 18%;
+
 /* permet de fixer une hauteur mini sur les navigateurs modernes */
   min-height:27em;
 /* pour obtenir le même effet sur IE, sachant que si le contenu dépasse, il
@@ -361,8 +363,10 @@ table.listeLegere th.libelle{
 ------------------------------------------*/
 #connexion{
     border-radius:15px;
-    background-color:white;
+
+
     width: 300px;
+    position: relative;
     /*box-shadow: 10px 10px 5px;*/
     background: rgba(226,226,226,1);
     background: -moz-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(186,184,186,1) 100%);
@@ -372,12 +376,37 @@ table.listeLegere th.libelle{
     background: -ms-linear-gradient(top, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(186,184,186,1) 100%);
     background: linear-gradient(to bottom, rgba(226,226,226,1) 0%, rgba(219,219,219,1) 50%, rgba(209,209,209,1) 51%, rgba(186,184,186,1) 100%);
 
-    -webkit-box-shadow:0 1px 4px #000, 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    -moz-box-shadow:0 1px 4px #000, 0 0 40px rgba(0, 0, 0, 0.1) inset;
-    box-shadow:0 1px 4px #000, 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -webkit-box-shadow:0 1px 5px rgba(0,0,0,0.25), 0 0 50px rgba(0,0,0,0.1) inset;
+    -moz-box-shadow:0 1px 5px rgba(0,0,0,0.25), 0 0 50px rgba(0,0,0,0.1) inset;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.25), 0 0 50px rgba(0,0,0,0.1) inset;
 }
+
+#connexion:before {
+      position: absolute;
+      right: 80px;
+      bottom: 5px;
+      width: 100%;
+      height: 37%;
+      border-radius: 0 10% 0 0;
+      z-index: -1;
+      content: "BEFORE";
+      box-shadow: 86px 0 17px rgba(0,0,0,0.33);
+      -webkit-transform: skew(-36deg);
+     -moz-transform: skew(-36deg);
+     -ms-transform: skew(-36deg);
+     -o-transform: skew(-36deg);
+     transform: skew(-36deg);
+      -webkit-transform-origin: 0% 100%;
+     -moz-transform-origin: 0% 100%;
+     -ms-transform-origin: 0% 100%;
+     -o-transform-origin: 0% 100%;
+ 
+
+      }
+
+
 #connexion legend{
-  
+
     border:1px solid;
     border-radius: 5px;
     background-color: white;
@@ -396,6 +425,7 @@ table.listeLegere th.libelle{
     -webkit-box-shadow:0 1px 4px #000, 0 0 40px rgba(0, 0, 0, 0.1) inset;
     -moz-box-shadow:0 1px 4px #000, 0 0 40px rgba(0, 0, 0, 0.1) inset;
     box-shadow:0 1px 4px #000, 0 0 40px rgba(0, 0, 0, 0.1) inset;
+
 }
 
 
