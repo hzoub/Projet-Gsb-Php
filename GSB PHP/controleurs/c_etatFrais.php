@@ -1,9 +1,17 @@
 ﻿<?php
+
+$moisFicheActuel = date("Ym");
+$ficheCR = $pdo->getVisiteurFicheCR($moisFicheActuel);
+$nbFicheCR = count($ficheCR);
+
+$ficheVA = $pdo->getVisiteurFicheVa();
+$nbFicheVA = count($ficheVA);
+
 include("vues/v_sommaire.php");
 $action = $_REQUEST['action'];
 $idVisiteur = $_SESSION['idVisiteur'];
 $mois = getMois(date("d/m/Y"));
-$moisFicheActuel = date("Ym");
+
 switch($action){
 	
 	case 'selectionnerMois':{
@@ -56,7 +64,7 @@ switch($action){
 
 		//Si la fonction getVisiteurFicheCR renvoie null affiche un msg et renvoie à la page d'accueil.
 		if($visiteurFiche==null){
-
+			/*----------------------------------------------------------*/
 			echo "<div class=\"infosFiche message\">
 
 					<div class=\"left\">
@@ -75,7 +83,7 @@ switch($action){
 				</div>
 					<meta http-equiv=\"refresh\" content=\"3; URL=index.php?uc=etatFrais&action=listeVisiteur\">			  
 				 ";
-
+			/*----------------------------------------------------------*/
 		}
 
 		else{
@@ -112,6 +120,7 @@ switch($action){
 		 include("vues/v_ficheFrais.php");
 		 break; 
 	}
+/*----------------------------------------------------------*/
 
 	/**
 	*@author Zoubert Hanem
@@ -147,7 +156,8 @@ switch($action){
 		include("vues/v_suiviPaiement.php");
 		break;
 	}
-	
+
+/*----------------------------------------------------------*/
 	/**
 	*@author ....
 	*/

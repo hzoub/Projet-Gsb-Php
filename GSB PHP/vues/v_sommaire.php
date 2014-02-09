@@ -10,13 +10,15 @@
 				<?php echo $_SESSION['prenom']."  ".$_SESSION['nom']; ?><hr/>
 		   </li>
 		    <li class="">
-              <a href="index.php?uc=etatFrais&action=listeVisiteur" title="">Liste des Visiteurs</a>
+              <a href="index.php?uc=etatFrais&action=listeVisiteur" title="Liste des Visiteurs">Liste des Visiteurs</a>
       	   </li>
 		   <li class="smenu">
-              <a href="index.php?uc=etatFrais&action=ChoixVisiteur" title="Valider fiche de frais">Valider les fiches de frais</a>
+              <a href="index.php?uc=etatFrais&action=ChoixVisiteur" data-clicked="no" id="valider" title="Valider fiche de frais">Valider les fiches de frais</a>
+              <span class="notifFiche"><?php if(isset($nbFicheCR))echo $nbFicheCR; ?></span>
       	   </li>
            <li class="smenu">
-              <a href="index.php?uc=etatFrais&action=ChoixSuivi" title="Suivre le paiement des fiches de frais">Suivre le paiement des fiches de frais</a>
+              <a href="index.php?uc=etatFrais&action=ChoixSuivi" id="suivi" title="Suivre le paiement des fiches de frais">Suivre le paiement des fiches de frais</a>
+              <span class="notifFiche"><?php if(isset($nbFicheVA)) echo $nbFicheVA; ?></span>
            </li>
 
 		   <li class="smenu">
