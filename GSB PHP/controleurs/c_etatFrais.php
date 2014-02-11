@@ -42,13 +42,15 @@ switch($action){
 		include("vues/v_etatFrais.php");
 		break;
 	}
-	
+
+/*----------------------------------------------------------*/
+
 	/**
-	*@author ...
+	*@author ....
 	*/
-		case 'infoVisteur':{
-		$visiteur=$pdo->getInfosV();
-		include("vues/v_affVisiteurs.php");
+	case 'listeVisiteur':{
+		$lesVisiteurs = $pdo->getListeVisiteur();
+		include("vues/v_accueilComptable.php");
 		break;
 	}
 
@@ -64,7 +66,7 @@ switch($action){
 
 		//Si la fonction getVisiteurFicheCR renvoie null affiche un msg et renvoie à la page d'accueil.
 		if($visiteurFiche==null){
-			/*----------------------------------------------------------*/
+			/*------------------------ZH----------------------------------*/
 			echo "<div class=\"infosFiche message\">
 
 					<div class=\"left\">
@@ -77,7 +79,7 @@ switch($action){
 
 					<div class=\"right\">
 
-						<p>Il n'y a aucune fiche a valider ce mois çi</p>
+						<p>Il n'y a pas de fiche de frais pour ce mois</p>
 
 					</div>
 				</div>
@@ -126,7 +128,7 @@ switch($action){
 	*@author Zoubert Hanem
 	*/
 		case 'ChoixSuivi':{
-		//Récupere le visiteur 
+		//Récupere la fiche du visiteur 
 		$visiteurFiche = $pdo->getVisiteurFicheVa();
 		//Récupere le mois de la fiche
 		$moisFiche = $pdo->getVisiteurFicheVa();
@@ -158,13 +160,5 @@ switch($action){
 	}
 
 /*----------------------------------------------------------*/
-	/**
-	*@author ....
-	*/
-	case 'listeVisiteur':{
-		$lesVisiteurs = $pdo->getInfosV();
-		include("vues/v_accueilComptable.php");
-		break;
-	}
 }
 ?>

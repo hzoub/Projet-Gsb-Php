@@ -62,19 +62,6 @@ class PdoGsb{
 		return $ligne;
 	}
 	
-/**
-  * Retourne les informations des  visiteurs qui ne sont pas des comptables
-   * @return le nom et le prenom sous la forme d'un tableau associatif 
-   *By zoubert hanem
-*/
-	public function getInfosV(){
-		$req = "SELECT id,nom,prenom
-				FROM visiteur
-				WHERE comptable=0";
-				$rs = PdoGsb::$monPdo->query($req);
-				$ligne = $rs->fetchAll();
-		return $ligne;
-	}
 	
 		public function getFicheFraiVisiteur($idVisiteur){
 		$req = "select dateModif
@@ -84,9 +71,25 @@ class PdoGsb{
 				$ligne = $rs->fetchAll();
 		return $ligne;
 	}
+
+/*----------------------------------------------------------*/
+
 /**
- * Retourne les informations des fiches de frais "CR" (c'est à dire Fiche créée, saisie en cours).
-   * @return l'id le nom, le prenom et le mois de la fiche frais sous la forme d'un tableau associatif 
+   *Retourne toutes les informations des  visiteurs qui ne sont pas comptable.
+   *@return le nom et le prenom sous la forme d'un tableau associatif 
+   *@author ....
+*/
+	public function getListeVisiteur(){
+		$req = "SELECT id,nom,prenom
+				FROM visiteur
+				WHERE comptable=0";
+				$rs = PdoGsb::$monPdo->query($req);
+				$ligne = $rs->fetchAll();
+		return $ligne;
+	}
+/**
+   *Retourne les informations des fiches de frais "CR" (c'est à dire Fiche créée, saisie en cours).
+   *@return l'id le nom, le prenom et le mois de la fiche frais sous la forme d'un tableau associatif 
 */
 
 	public function getVisiteurFicheCR($moisActuel){
@@ -103,8 +106,8 @@ class PdoGsb{
 
 /**
  * Retourne les informations des fiches de frais validé par le comptable
-   * @return l'id le nom,prenom,le mois sous la forme d'un tableau associatif 
-   *By zoubert hanem
+   *@return l'id le nom,prenom,le mois sous la forme d'un tableau associatif 
+   *@author zoubert hanem
 */
 
 	public function getVisiteurFicheVa(){
@@ -120,6 +123,11 @@ class PdoGsb{
 		$ligne = $rs->fetchAll();
 		return $ligne;
 	}
+
+
+/*----------------------------------------------------------*/
+
+
 /**
  * Retourne sous forme d'un tableau associatif toutes les lignes de frais hors forfait
  * concernées par les deux arguments
@@ -165,7 +173,7 @@ class PdoGsb{
  * @return l'id, le libelle et la quantité sous la forme d'un tableau associatif 
 */
 	public function getLesFraisForfait($idVisiteur, $mois){
-		$req = "select fraisforfait.id as idfrais, fraisforfait.libelle as libelle, 
+		$req = "select fraisforfait.id as idfrais, fraisforfait.libelle as libelle,idVisiteur, 
 		lignefraisforfait.quantite as quantite from lignefraisforfait inner join fraisforfait 
 		on fraisforfait.id = lignefraisforfait.idfraisforfait
 		where lignefraisforfait.idvisiteur ='$idVisiteur' and lignefraisforfait.mois='$mois' 

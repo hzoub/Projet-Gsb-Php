@@ -4,11 +4,13 @@ if(!isset($_REQUEST['action'])){
 }
 $action = $_REQUEST['action'];
 $moisFicheActuel = date("Ym");
+
 $ficheCR = $pdo->getVisiteurFicheCR($moisFicheActuel);
 $nbFicheCR = count($ficheCR);
 
 $ficheVA = $pdo->getVisiteurFicheVa();
 $nbFicheVA = count($ficheVA);
+
 switch($action){
 	case 'demandeConnexion':{
 		include("vues/v_connexion.php");
@@ -36,7 +38,7 @@ switch($action){
 
 		}
 		if ($_SESSION['comptable']==true) {
-			$lesVisiteurs = $pdo->getInfosV();
+			$lesVisiteurs = $pdo->getListeVisiteur();
 			include("vues/v_accueilComptable.php");
 		}
 			

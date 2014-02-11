@@ -8,7 +8,7 @@
 			Etat : <?php echo $libEtat ?> depuis le <?php echo $numMois."-".$numAnnee ?> <br> Montant validé : <?php echo $montantValide." €"?>            
 		</p>
   </div>
-  <form method="POST"  action="index.php?uc=gererFrais&action=mettrePaiementFiche">
+  <form method="POST"  action="index.php?uc=gererFrais&action=rembourserFiche">
     <div class="corpsForm">
       <table class="listeLegere">
 
@@ -29,9 +29,13 @@
           <tr>
             <?php
             foreach (  $lesFraisForfait as $unFraisForfait){
+
+            $idVisiteur  = $unFraisForfait['idVisiteur'];
+            $idFrais = $unFraisForfait['idfrais'];            
             $quantite = $unFraisForfait['quantite'];
+
             ?>
-            <td class="qteForfait"><input type="" value="<?php echo $quantite ?>" size="14"> </td>
+            <td class="qteForfait"><input type="text" name="<?php echo $idVisiteur; ?>" value="<?php echo $quantite ?>" size="14"> </td>
             <?php
             }
             ?>
@@ -45,11 +49,12 @@
             <th class="date">Date</th>
             <th class="libelle">Libellé</th>
             <th class='montant'>Montant</th> 
-            <th class='montant'>Supprimer</th>                
+            <!--<th class='montant'>Supprimer</th>-->              
           </tr>
           <?php      
             foreach ($lesFraisHorsForfait as $unFraisHorsForfait){
-            $date = $unFraisHorsForfait['date'];
+
+            $date    = $unFraisHorsForfait['date'];
             $libelle = $unFraisHorsForfait['libelle'];
             $montant = $unFraisHorsForfait['montant'];
           ?>
@@ -57,14 +62,14 @@
             <td><input type="" value="<?php echo $date ?>"  size="14"></td>
             <td><input type="" value="<?php echo $libelle ?>"  size="14"></td>
             <td><input type="" value="<?php echo $montant ?>"  size="14"></td>
-            <td><input type="submit" value="Suprimer" name="btnSup"></td>
+            <!--<td><input type="submit" value="Suprimer" name="btnSup"></td>-->
           </tr>
           <?php 
           }
           ?>
       </table>
         <center>
-            <input id="paiement" type="submit" value="Mettre en paiement" size="20" />
+            <input id="paiement" type="submit" value="Rembourser" size="20" />
         </center>
     </div>
   </form>

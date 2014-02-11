@@ -21,9 +21,11 @@
               <span class="notifFiche"><?php if(isset($nbFicheVA)) echo $nbFicheVA; ?></span>
            </li>
 
-		   <li class="smenu">
+		   <!--
+        <li class="smenu">
               <a href="index.php?uc=etatFrais&action=#" title="Remboursement">Remboursement</a>
         </li>
+        -->
 
 			<li class="smenu">
               <a href="index.php?uc=connexion&action=deconnexion\" title="Se déconnecter">Déconnexion</a>
