@@ -131,7 +131,35 @@ switch($action){
 		$visiteurFiche = $pdo->getVisiteurFicheVa();
 		//Récupere le mois de la fiche
 		$moisFiche = $pdo->getVisiteurFicheVa();
+		
+		//Si la fonction getVisiteurFicheCR renvoie null affiche un msg et renvoie à la page d'accueil.
+		if($visiteurFiche==null){
+			/*------------------------ZH----------------------------------*/
+			echo "<div class=\"infosFiche message\">
+		
+					<div class=\"left\">
+		
+						<div class=\"icone\">
+							<img src=\"./images/imgInfos.png\">
+						</div>
+		
+					</div>
+		
+					<div class=\"right\">
+		
+						<p>Il n'y a pas de fiche a rembourser pour ce mois</p>
+		
+					</div>
+				</div>
+					<meta http-equiv=\"refresh\" content=\"3; URL=index.php?uc=etatFrais&action=listeVisiteur\">
+				 ";
+			/*----------------------------------------------------------*/
+		}
+		else{
+			
 		include("vues/v_choixSuivieVisiteur.php");
+		
+		}
 		break;
 	}
 
