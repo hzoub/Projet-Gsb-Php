@@ -1,4 +1,9 @@
 <?php
+$ficheCR = $pdo->getVisiteurFicheCR($moisFicheActuel);
+$nbFicheCR = count($ficheCR);
+
+$ficheVA = $pdo->getVisiteurFicheVa();
+$nbFicheVA = count($ficheVA);
 include("vues/v_sommaire.php");
 $idVisiteur = $_SESSION['idVisiteur'];
 $mois = getMois(date("d/m/Y"));
@@ -55,29 +60,18 @@ switch($action){
 
 	 case "validerFiche":{
 
-        /*$idVisiteur = $_SESSION['idVisiteur'];
-        $mois = $_SESSION['leMois'];
-        $pdo->majEtatFicheFrais($idVisiteur, $mois,'VA');
-        $tabMontant = $pdo->getLesMontants();
-        $tabQuantites = $pdo->getLesQuantites($idVisiteur, $mois);
-        $montant = 0;
-        for($i=0; $i<4; $i++){
-            $montant += ($tabMontant[$i][0] * $tabQuantites[$i][0]);
-        }
-        $montantHorsForfait = $pdo->getMontantHorsForfait($idVisiteur, $mois);
-        $montant += $montantHorsForfait[0];
-        $pdo->majMontantValide($idVisiteur, $mois, $montant);
-        <h2>La validation a bien &eacute;t&eacute; prise en compte</h2>*/
+	 	$idVisiteur = $_REQUEST['idVisSelect'];
+	 	
         break;
     }
 	
 	case 'rembourserFiche':{
 
-		$idVisSelect = $_REQUEST['idVisSelect'];
-		echo $idVisSelect;
-        /*$mois = $_SESSION['leMois'];
-        $pdo->majEtatFicheFrais($idVisiteur, $mois,'RB');
-        <h2>Le remboursement a bien &eacute;t&eacute; pris en compte</h2>*/
+		$idVisiteur = $_REQUEST['idVisSelect'];
+		$mois = $_REQUEST['moisSelected'];
+        $pdo->majEtatFicheFrais($idVisiteur,$mois,'RB');
+        include("vues/v_RbSucess.php");
+		
 	 break;
 	}
 	

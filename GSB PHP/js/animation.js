@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 
 
-	$(".infosFiche").addClass("animationMsg bounceIn").delay(3000).fadeOut("slow");
+	$(".infosFiche").addClass("animationMsg bounceIn");//.delay(3000).fadeOut("slow");
 
 
 

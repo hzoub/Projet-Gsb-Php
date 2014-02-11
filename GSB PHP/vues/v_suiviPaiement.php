@@ -8,7 +8,7 @@
 			Etat : <?php echo $libEtat ?> depuis le <?php echo $numMois."-".$numAnnee ?> <br> Montant validé : <?php echo $montantValide." €"?>            
 		</p>
   </div>
-  <form method="POST"  action="index.php?uc=gererFrais&action=rembourserFiche&idVisSelect=<?php echo $idVisSelect;?>">
+  <form method="POST"  action="index.php?uc=gererFrais&action=rembourserFiche&idVisSelect=<?php echo $idVisSelect;?>&moisSelected=<?php echo $leMois;?>">
     <div class="corpsForm">
       <table class="listeLegere">
 

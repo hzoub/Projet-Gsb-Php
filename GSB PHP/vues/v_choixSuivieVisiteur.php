@@ -23,7 +23,7 @@
 			
 		<!--MOIS-->
 		 Mois : 
-	        <select id="lstMois" name="lstMois">
+	        <select id="moisSelected" name="moisSelected">
 	            <?php
 				foreach ($moisFiche as $unMois)
 				{
