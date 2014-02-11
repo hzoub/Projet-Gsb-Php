@@ -73,10 +73,9 @@ switch($action){
 	
 	case 'rembourserFiche':{
 
-		$idVisiteur = $_REQUEST['idVisiteur'];
-		echo $idVisiteur;
-		/*$idVisiteur = $_SESSION['idVisiteur'];
-        $mois = $_SESSION['leMois'];
+		$idVisSelect = $_REQUEST['idVisSelect'];
+		echo $idVisSelect;
+        /*$mois = $_SESSION['leMois'];
         $pdo->majEtatFicheFrais($idVisiteur, $mois,'RB');
         <h2>Le remboursement a bien &eacute;t&eacute; pris en compte</h2>*/
 	 break;

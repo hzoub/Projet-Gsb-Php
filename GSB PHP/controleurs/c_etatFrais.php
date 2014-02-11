@@ -6,7 +6,6 @@ $nbFicheCR = count($ficheCR);
 
 $ficheVA = $pdo->getVisiteurFicheVa();
 $nbFicheVA = count($ficheVA);
-
 include("vues/v_sommaire.php");
 $action = $_REQUEST['action'];
 $idVisiteur = $_SESSION['idVisiteur'];
@@ -103,11 +102,11 @@ switch($action){
 		case 'voirFicheFraisVisiteur':{	
 		
 		$leMois = $_REQUEST['lstMois']; 
-		$idVis = $_REQUEST['idVis'];
+		$idVisSelect = $_REQUEST['idVisSelect'];
 		
-		$lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVis,$leMois);
-		$lesFraisForfait= $pdo->getLesFraisForfait($idVis,$leMois);
-		$lesInfosFicheFrais = $pdo->getLesInfosFicheFrais($idVis,$leMois);
+		$lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVisSelect,$leMois);
+		$lesFraisForfait= $pdo->getLesFraisForfait($idVisSelect,$leMois);
+		$lesInfosFicheFrais = $pdo->getLesInfosFicheFrais($idVisSelect,$leMois);
 	
 		
 		$numAnnee =substr( $leMois,0,4);
@@ -117,7 +116,7 @@ switch($action){
 		$nbJustificatifs = $lesInfosFicheFrais['nbJustificatifs'];
 		$dateModif =  $lesInfosFicheFrais['dateModif'];
 		$dateModif =  dateAnglaisVersFrancais($dateModif);
-		$ficheFraiVisiteur=$pdo->getLesFraisHorsForfait($idVis,$leMois);
+		$ficheFraiVisiteur=$pdo->getLesFraisHorsForfait($idVisSelect,$leMois);
 
 		 include("vues/v_ficheFrais.php");
 		 break; 
@@ -141,11 +140,12 @@ switch($action){
 	*/
 		case 'voirSuiviPaiement':{
 		$leMois = $_REQUEST['lstMois']; 
-		$idVis = $_REQUEST['idVis'];
+
+		$idVisSelect = $_REQUEST['idVisSelect'];
 		
-		$lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVis,$leMois);
-		$lesFraisForfait= $pdo->getLesFraisForfait($idVis,$leMois);
-		$lesInfosFicheFrais = $pdo->getLesInfosFicheFrais($idVis,$leMois);
+		$lesFraisHorsForfait = $pdo->getLesFraisHorsForfait($idVisSelect,$leMois);
+		$lesFraisForfait= $pdo->getLesFraisForfait($idVisSelect,$leMois);
+		$lesInfosFicheFrais = $pdo->getLesInfosFicheFrais($idVisSelect,$leMois);
 		
 		$numAnnee =substr( $leMois,0,4);
 		$numMois =substr( $leMois,4,2);
@@ -154,7 +154,8 @@ switch($action){
 		$nbJustificatifs = $lesInfosFicheFrais['nbJustificatifs'];
 		$dateModif =  $lesInfosFicheFrais['dateModif'];
 		$dateModif =  dateAnglaisVersFrancais($dateModif);
-		 $ficheFraiVisiteur=$pdo->getLesFraisHorsForfait($idVis,$leMois);
+		 $ficheFraiVisiteur=$pdo->getLesFraisHorsForfait($idVisSelect,$leMois);
+		 
 		include("vues/v_suiviPaiement.php");
 		break;
 	}

@@ -8,7 +8,7 @@
 			Etat : <?php echo $libEtat ?> depuis le <?php echo $numMois."-".$numAnnee ?> <br> Montant validé : <?php echo $montantValide." €"?>            
 		</p>
   </div>
-  <form method="POST"  action="index.php?uc=gererFrais&action=rembourserFiche">
+  <form method="POST"  action="index.php?uc=gererFrais&action=rembourserFiche&idVisSelect=<?php echo $idVisSelect;?>">
     <div class="corpsForm">
       <table class="listeLegere">
 
@@ -30,12 +30,12 @@
             <?php
             foreach (  $lesFraisForfait as $unFraisForfait){
 
-            $idVisiteur  = $unFraisForfait['idVisiteur'];
+            //$idVisiteur  = $unFraisForfait['idVisiteur'];
             $idFrais = $unFraisForfait['idfrais'];            
             $quantite = $unFraisForfait['quantite'];
 
             ?>
-            <td class="qteForfait"><input type="text" name="<?php echo $idVisiteur; ?>" value="<?php echo $quantite ?>" size="14"> </td>
+            <td class="qteForfait"><input type="text"  value="<?php echo $quantite ?>" size="14"> </td>
             <?php
             }
             ?>
@@ -59,9 +59,9 @@
             $montant = $unFraisHorsForfait['montant'];
           ?>
           <tr>
-            <td><input type="" value="<?php echo $date ?>"  size="14"></td>
-            <td><input type="" value="<?php echo $libelle ?>"  size="14"></td>
-            <td><input type="" value="<?php echo $montant ?>"  size="14"></td>
+            <td><input type="text" value="<?php echo $date ?>"  size="14"></td>
+            <td><input type="text" value="<?php echo $libelle ?>"  size="14"></td>
+            <td><input type="text" value="<?php echo $montant ?>"  size="14"></td>
             <!--<td><input type="submit" value="Suprimer" name="btnSup"></td>-->
           </tr>
           <?php 

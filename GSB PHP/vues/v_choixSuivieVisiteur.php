@@ -6,7 +6,7 @@
 	  	<div class="corpsForm">
 		  
 			Visiteur :
-			<select id="lstVisiteur" name="idVis" title="Sélectionnez l'id du visiteur souhaité">
+			<select id="lstVisiteur" name="idVisSelect" title="Sélectionnez l'id du visiteur souhaité">
 					  <?php 
 						foreach($visiteurFiche as $recup)  {
 						$id = $recup["id"];
@@ -14,7 +14,7 @@
 						$prenom = $recup["prenom"];
 						?>
 
-				<option name="idVis" value="<?php echo $id; ?>"><?php echo $nom." ".$prenom; ?></option>
+				<option id="idVisSelect" name="idVisSelect" value="<?php echo $id; ?>"><?php echo $nom." ".$prenom; ?></option>
 
 				<?php
 				}
