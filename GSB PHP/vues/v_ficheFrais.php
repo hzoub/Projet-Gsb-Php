@@ -60,6 +60,6 @@
           }
 		?>
     </table>
-	<center><input id="" type="reset" value="Valider cette fiche" size="20" /></center>
+	<center><input id="" type="submit" value="Valider cette fiche" size="20" /></center>
   </div>
       
