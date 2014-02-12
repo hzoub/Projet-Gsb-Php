@@ -46,7 +46,6 @@
           $libelle = $unFraisHorsForfait['libelle'];
           $montant = $unFraisHorsForfait['montant'];
           $id = $unFraisHorsForfait['id'];
-          echo $idVisiteur;
     ?>
              <tr>
                 <td><input type="text" name="date" value="<?php echo $date ?>"  size="14"></td>
