@@ -41,6 +41,18 @@ switch($action){
 		include("vues/v_etatFrais.php");
 		break;
 	}
+	
+	/* Par Hervé */ 
+	
+	case 'visualiserFiche':{
+		/* $mesFiches=$pdo-> getLesFichesFrais();
+		include("vues/v_visualiserFiche.php");
+		break; */
+		//A finir pour la version de l'oral
+		$majFrais=$pdo-> majFraistest($idVisiteur);
+		include("vues/v_visualiser.php");
+		break;
+		}
 
 /*----------------------------------------------------------*/
 
