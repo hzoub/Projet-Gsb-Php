@@ -60,12 +60,13 @@ switch($action){
 	}
 
 	 case "validerFiche":{
-
-	 	$idVisiteur = $_REQUEST['idVisSelect'];
-	 	$mois = $_REQUEST['moisSelected'];
-	 	$pdo->majEtatFicheFrais($idVisiteur,$mois,'RB');
-	 	$montant = $unFraisHorsForfait['montant'];
+	 	//$pdo->majEtatFicheFrais($idVisiteur,$mois,'RB');
+	 	$montant = $_POST['montant'];
+	 	$quantité = $_POST['quantite'];
 	 	
+	 	echo "Montant -> " .$montant;
+	 	echo "<br>";
+	 	echo "Quantité -> " .$quantité;
 	 	
         break;
     }
