@@ -138,7 +138,7 @@ class PdoGsb{
     
 	/* Affiche toutes les fiches de frais
  
-	Fonction - Hervé
+	Fonction - par  Hervé
  */
  
 	public function getLesFichesFrais(){
