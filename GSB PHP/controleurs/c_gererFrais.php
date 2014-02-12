@@ -1,4 +1,5 @@
 <?php
+$moisFicheActuel = date("Ym");
 $ficheCR = $pdo->getVisiteurFicheCR($moisFicheActuel);
 $nbFicheCR = count($ficheCR);
 

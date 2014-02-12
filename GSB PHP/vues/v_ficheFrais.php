@@ -60,6 +60,10 @@
           }
 		?>
     </table>
-	<center><input id="" type="submit" value="Valider cette fiche" size="20" /></center>
+	<center>
+    <a href="index.php?uc=gererFrais&action=#=<?php echo ""; ?>"
+       onclick="return confirm('Voulez-vous vraiment valider ce frais ?');">Valider cette fiche
+    </a>
+  </center>
   </div>
       
