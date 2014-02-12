@@ -124,7 +124,16 @@ class PdoGsb{
 		return $ligne;
 	}
 
-
+    /**
+     * 
+     */
+    public function majMontantValide($idVisiteur, $mois, $montant){
+        $req = "update fichefrais set montantValide =".$montant." 
+        		where idVisiteur ='".$idVisiteur."' 
+        		and mois = '".$mois."'";
+        PdoGsb::$monPdo->exec($req);
+    }
+    
 /*----------------------------------------------------------*/
 
 

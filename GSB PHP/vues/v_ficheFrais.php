@@ -4,7 +4,7 @@
     <p>
         Etat : <?php echo $libEtat ?> et mise en paiement depuis le <?php echo $numMois."-".$numAnnee ;?> <br> <!--Montant validé : <?php echo $montantValide." €"?>-->            
     </p>
-    <form method="POST"  action="index.php?uc=gererFrais&action=validerFiche">
+    <form method="POST"  action="index.php?uc=gererFrais&action=validerFiche&idVisSelect=<?php echo $idVisSelect;?>&moisSelected=<?php echo $leMois;?>">
     <table class="listeLegere">
        <caption>Eléments forfaitisés </caption>
         <tr>
@@ -46,6 +46,7 @@
           $libelle = $unFraisHorsForfait['libelle'];
           $montant = $unFraisHorsForfait['montant'];
           $id = $unFraisHorsForfait['id'];
+          echo $idVisiteur;
     ?>
              <tr>
                 <td><input type="text" name="date" value="<?php echo $date ?>"  size="14"></td>
