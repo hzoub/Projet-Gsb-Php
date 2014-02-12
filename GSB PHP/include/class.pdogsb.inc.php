@@ -132,8 +132,53 @@ class PdoGsb{
         		where idVisiteur ='".$idVisiteur."' 
         		and mois = '".$mois."'";
         PdoGsb::$monPdo->exec($req);
+	
+		
     }
     
+	* Affiche toutes les fiches de frais
+ 
+	Fonction - Hervé
+ */
+ 
+	public function getLesFichesFrais(){
+		$req = "Select *
+				From visiteur, fichefrais, etat
+				Where fichefrais.idVisiteur = visiteur.id and
+						etat.id = fichefrais.idEtat
+				order by mois desc";
+		$res = PdoGsb::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes; 
+		//PdoGsb::$monPdo->exec($req);
+		}
+		
+			// Par Hervé fonction visualiser frais hors forfait
+	public function majFraistest(){
+		$req = "SELECT distinct libelle,montant,nom, prenom, date
+				FROM lignefraishorsforfait, lignefraisforfait,visiteur
+				WHERE lignefraishorsforfait.idVisiteur=visiteur.id
+				AND lignefraisforfait.idVisiteur=visiteur.id";
+		$res = PdoGsb::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+			
+			}
+			
+			// Par Hervé fonction visualiser frais forfait
+			
+	public function majFraisForfaittest(){
+		$req = "SELECT nom,prenom,libelle,montant,mois,quantite
+FROM fraisforfait,lignefraisforfait,visiteur
+WHERE fraisforfait.id = lignefraisforfait.idFraisForfait
+AND lignefraisforfait.idVisiteur=visiteur.id";
+		$res = PdoGsb::$monPdo->query($req);
+		$lesLignes = $res->fetchAll();
+		return $lesLignes;
+			
+			}
+	
+	
 /*----------------------------------------------------------*/
 
 
@@ -375,6 +420,10 @@ class PdoGsb{
 		$req = "update ficheFrais set idEtat = '$etat', dateModif = now() 
 		where fichefrais.idvisiteur ='$idVisiteur' and fichefrais.mois = '$mois'";
 		PdoGsb::$monPdo->exec($req);
+		
+		
+		
+		
 	}
 }
 ?>
