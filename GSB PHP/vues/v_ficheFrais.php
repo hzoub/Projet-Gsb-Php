@@ -44,13 +44,17 @@
         	$date = $unFraisHorsForfait['date'];
         	$libelle = $unFraisHorsForfait['libelle'];
         	$montant = $unFraisHorsForfait['montant'];
-
+          $id = $unFraisHorsForfait['id'];
 		?>
              <tr>
                 <td><input type="" value="<?php echo $date ?>"  size="14"></td>
                 <td><input type="" value="<?php echo $libelle ?>"  size="14"></td>
                 <td><input type="" value="<?php echo $montant ?>"  size="14"></td>
-                <td><input type="submit" value="Suprimer"></td>
+                <td>
+                  <a href="index.php?uc=gererFrais&action=#=<?php echo $id ?>"
+                    onclick="return confirm('Voulez-vous vraiment supprimer ce frais?');">Supprimer
+                  </a>
+                </td>
              </tr>
         <?php 
           }
