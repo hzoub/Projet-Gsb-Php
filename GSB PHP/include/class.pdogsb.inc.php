@@ -136,7 +136,7 @@ class PdoGsb{
 		
     }
     
-	* Affiche toutes les fiches de frais
+	/* Affiche toutes les fiches de frais
  
 	Fonction - Hervé
  */
