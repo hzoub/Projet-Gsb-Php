@@ -32,7 +32,7 @@
     </table>
     
     <table class="listeLegere">
-       <caption>Descriptif des éléments hors forfait -<?php echo $nbJustificatifs ?>- justificatifs reçus -
+       <caption>Descriptif des éléments hors forfait -<input type="text" size="2" name="nbJustifs" required="required">- justificatifs reçus -
        </caption>
              <tr>
                 <th class="date">Date</th>

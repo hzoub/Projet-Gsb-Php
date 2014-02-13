@@ -127,13 +127,12 @@ class PdoGsb{
     /**
      * 
      */
-    public function majMontantValide($idVisiteur, $mois, $montant){
-        $req = "update fichefrais set montantValide =".$montant." 
-        		where idVisiteur ='".$idVisiteur."' 
-        		and mois = '".$mois."'";
+    public function majMontantValide($idVisiteur,$mois,$nbjustificatifs,$montant){
+        $req = "update fichefrais 
+        		set montantValide = '$montant',nbJustificatifs = '$nbjustificatifs'
+        		where idVisiteur = '$idVisiteur' and mois='$mois' ";
+
         PdoGsb::$monPdo->exec($req);
-	
-		
     }
     
 	/* Affiche toutes les fiches de frais

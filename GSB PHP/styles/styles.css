@@ -93,7 +93,7 @@ ul#menuList{
   margin:0px;
   padding:0px;
   font-size: 1em;
-  height: 250px;
+  height: 280px;
   border-radius: 5px;
   border:1px solid transparent;
 
@@ -128,7 +128,7 @@ ul#menuList a {
   font-weight: bold;
   display:block;
   text-decoration:none;
-  width: 150px;
+  width: 123%;
   border-radius: 5px;
   border: 1px solid #79bbff;
 
