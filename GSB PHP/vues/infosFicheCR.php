@@ -11,7 +11,7 @@
 
 		<div class="right">
 
-			<p>Il n'y a pas de fiche de frais pour ce mois</p>
+			<p>Aucune fiche frais n'existe</p>
 
 		</div>
 
