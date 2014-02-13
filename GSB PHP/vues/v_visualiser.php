@@ -1,7 +1,7 @@
 <div id="contenu">
-<center><table border=1>
+<center><table border=1 class="listeVisiteur">
 	<tr>
-		<td colspan="24"><center>Fiche à valider (hors forfait)</center></td></tr>
+		<th colspan="24"><center>Fiche à valider (hors forfait)</center></th></tr>
 	<tr>
 		<td>&nbsp; Nom &nbsp; </td>
 		<td>&nbsp; Prénom &nbsp; </td>
@@ -30,9 +30,9 @@
 <br>
 
 
-<center><table border=1>
+<center><table border=1 class="listeVisiteur">
 	<tr>
-		<td colspan="24"><center>Fiche à valider (forfait)</center></td></tr>
+		<th colspan="24"><center>Fiche à valider (forfait)</center></th></tr>
 	<tr>
 		<td>&nbsp; Nom &nbsp; </td>
 		<td> &nbsp; Prénom &nbsp; </td>

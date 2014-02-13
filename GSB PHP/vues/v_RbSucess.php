@@ -16,3 +16,4 @@
 			</div>
 
 		</div>
+		<meta http-equiv="Refresh" content="3; URL=index.php?uc=etatFrais&action=listeVisiteur"> 

@@ -125,7 +125,7 @@ class PdoGsb{
 	}
 
     /**
-     * 
+     *@author zoubert hanem
      */
     public function majMontantValide($idVisiteur,$mois,$nbjustificatifs,$montant){
         $req = "update fichefrais 
@@ -167,7 +167,7 @@ class PdoGsb{
 			// Par Hervé fonction visualiser frais forfait
 			
 	public function majFraisForfaittest(){
-		$req = "SELECT nom,prenom,libelle,montant,mois,quantite
+		$req = "SELECT distinct nom,prenom,libelle,montant,mois,quantite
 FROM fraisforfait,lignefraisforfait,visiteur
 WHERE fraisforfait.id = lignefraisforfait.idFraisForfait
 AND lignefraisforfait.idVisiteur=visiteur.id";

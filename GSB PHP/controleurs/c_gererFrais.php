@@ -73,6 +73,9 @@ switch($action){
         break;
     }
 	
+	/**
+	*@author zoubert hanem
+	*/
 	case 'rembourserFiche':{
 
 		$idVisiteur = $_REQUEST['idVisSelect'];

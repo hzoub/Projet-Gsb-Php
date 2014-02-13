@@ -42,8 +42,9 @@ switch($action){
 		break;
 	}
 	
-	/* Par Hervé */ 
-	
+	/**
+	*@author Hervé
+	*/
 	case 'visualiserFiche':{
 		/* $mesFiches=$pdo-> getLesFichesFrais();
 		include("vues/v_visualiserFiche.php");
@@ -57,7 +58,7 @@ switch($action){
 /*----------------------------------------------------------*/
 
 	/**
-	*@author ....
+	*@author Hervé
 	*/
 	case 'listeVisiteur':{
 		$lesVisiteurs = $pdo->getListeVisiteur();
