@@ -37,11 +37,11 @@ switch($action){
 			include("vues/v_sommaire.php");
 
 		}
-		if($_SESSION['comptable']==true){
+		/*if($_SESSION['comptable']==true){
 
 			$lesVisiteurs = $pdo->getListeVisiteur();
 			include("vues/v_accueilComptable.php");
-		}
+		}*/
 			
 		break;
 		
